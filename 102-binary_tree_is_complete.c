@@ -16,27 +16,27 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	queue = queue_push(queue, (void *)tree);
 	while (queue)
 	{
-	binary_tree_t *temp = (binary_tree_t *)queue->ptr;
+		binary_tree_t *temp = (binary_tree_t *)queue->ptr;
 
-	if (temp->left)
-	{
-		if (flag)
-		return (0);
-		queue = queue_push(queue, (void *)temp->left);
-	}
-	else
-		flag = 1;
+		if (temp->left)
+		{
+			if (flag)
+				return (0);
+			queue = queue_push(queue, (void *)temp->left);
+		}
+		else
+			flag = 1;
 
-	if (temp->right)
-	{
-		if (flag)
-		return (0);
-		queue = queue_push(queue, (void *)temp->right);
-	}
-	else
-		flag = 1;
+		if (temp->right)
+		{
+			if (flag)
+				return (0);
+			queue = queue_push(queue, (void *)temp->right);
+		}
+		else
+			flag = 1;
 
-	queue = queue_pop(queue);
+		queue = queue_pop(queue);
 	}
 	return (1);
 }
