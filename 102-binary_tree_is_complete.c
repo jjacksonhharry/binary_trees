@@ -11,7 +11,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	queue_t *queue = NULL;
 
 	if (!tree)
-	return (0);
+		return (0);
 
 	queue = queue_push(queue, (void *)tree);
 	while (queue)
@@ -40,4 +40,3 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	}
 	return (1);
 }
-
